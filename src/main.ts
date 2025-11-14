@@ -57,14 +57,14 @@ function updateDateTime(){
   const day = now.getDay()
   const month = now.toLocaleString('es-ES',{month:'long'})
   const year = now.getFullYear()
-  document.getElementById("time").textContent=hours+':'+minutes
-  document.getElementById("date-month-day").textContent=day+' '+month+' '+year;
+  document.getElementById("time")!.textContent=hours+':'+minutes
+  document.getElementById("date-month-day")!.textContent=day+' '+month+' '+year;
 }
 
 async function updateTemp(){
   const response = await fetch('https://wttr.in/Vigo?format=j1')
   const data = await response.json()
-  document.getElementById('temp').textContent=data.current_condition[0].temp_C + ' ºC'
+  document.getElementById('temp')!.textContent=data.current_condition[0].temp_C + ' ºC'
 }
 
 
